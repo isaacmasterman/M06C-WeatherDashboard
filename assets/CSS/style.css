@@ -1,0 +1,109 @@
+/* Root Colors */
+:root {
+    --search-button-color: #AABFEE;
+    --search-history-color: #E0E0E0;
+    --forecast-color: #323D4F;
+}
+
+/* Body Margin */
+body {
+    margin: 10px;
+}
+
+/* Header Styling */
+header h1 {
+    font-size: 28px;
+    color: white;
+    font-weight: bold;
+}
+
+/* Search Input Styling */
+#searchInput h2 {
+    font-size: 24px;
+    color: black;
+    font-weight: bold;
+}
+
+#searchInput button {
+    background-color: var(--search-button-color);
+    color: white;
+    border: none;
+}
+
+#searchInput .btn {
+    display: block;
+    width: 100%;
+}
+
+#searchContainer {
+    border-bottom: 1px solid black;
+}
+
+/* Search History Styling */
+#searchInput .list-group-item {
+    background-color: var(--search-history-color);
+    margin-bottom: 10px;
+}
+
+/* Styling for Current Weather */
+
+.current-weather-header {
+    display: flex;
+    align-items: center;
+}
+
+#city-name {
+    font-size: 24px;
+    color: black;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+#weather-icon {
+    margin-left: 15px;
+}
+
+#weather ul li {
+    margin: 10px 0;
+}
+
+#weather ul {
+    padding-left: 10px;
+}
+
+/* Forecast Styling */
+#forecast h2 {
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.forecast-day {
+    background-color: var(--forecast-color);
+    color: white;
+    margin: 10px;
+    padding: 5px;
+}
+
+.forecast-day h3 {
+    margin: 10px;
+}
+
+/* Media query */
+@media (max-width: 1200px) {
+    .forecast-day ul li {
+        font-size: 0.8em; /* Adjust this value as needed */
+    }
+}
+
+@media (max-width: 1000px) {
+    .forecast-day {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 95%;
+    }
+    #forecast .row {
+        flex-direction: column;
+    }
+}

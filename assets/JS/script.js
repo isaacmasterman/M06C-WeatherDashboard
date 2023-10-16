@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-const API_key = "95181cd738718c1439ace1f949449b4c"; // Hide when deployed
+const API_key = "95181cd738718c1439ace1f949449b4c";
 
 // Capture the city name from the search input and fetch weather data
 function handleCitySearch(cityName) {
