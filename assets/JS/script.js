@@ -5,10 +5,13 @@ const API_key = "95181cd738718c1439ace1f949449b4c"; // Hide when deployed
 function handleCitySearch(cityName) {
     const currentWeatherEndpoint = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_key}`;
 
+    let timezoneOffset = 0;
+    
     // Fetch weather data for the given city name
     fetch(currentWeatherEndpoint)
     .then(response => response.json())
     .then(data => {
+        timezoneOffset = data.timezone; 
         const latitude = data.coord.lat;
         const longitude = data.coord.lon;
 
@@ -38,10 +41,14 @@ function handleCitySearch(cityName) {
     
         for (let i = 0; i < forecastList.length && dayCount < 5; i++) {
             const forecast = forecastList[i];
-            const forecastTime = new Date(forecast.dt_txt).getHours();
+            // Adjust for the local timezone
+            const localTimestamp = forecast.dt + timezoneOffset;
+            const forecastDate = new Date(localTimestamp * 1000); // Convert to milliseconds
+            const forecastTime = forecastDate.getUTCHours();
+            
     
             // Check if the forecast is for noon (12:00)
-            if (forecastTime === 12) {
+            if (forecastTime >= 11 && forecastTime <= 13) {
                 forecastSections[dayCount].querySelector(".date").textContent = new Date(forecast.dt_txt).toLocaleDateString();
                 forecastSections[dayCount].querySelector(".temperature").textContent = `${forecast.main.temp}°C`;
                 forecastSections[dayCount].querySelector(".wind-speed").textContent = `${forecast.wind.speed} m/s`;
