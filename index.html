@@ -1,11 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/CSS/reset.css" />
+    <link rel="stylesheet" href="./assets/CSS/style.css" />
+    <title>Weather Dashboard</title>
 </head>
 <body>
+    <!-- Header with title -->
+    <header>
+        <h1 class="title">Weather Dashboard</h1>
+    </header>
     
+    <!-- Search section -->
+    <section class="search-section">
+        <h2>Search for a city</h2>
+        <div class="search-box">
+            <input type="text" placeholder="Enter city name" />
+            <button><img src="path-to-search-icon.png" alt="Search Icon"></button>
+        </div>
+        <ul class="search-history">
+            <!-- Search history items will be appended here -->
+        </ul>
+    </section>
+    
+    <!-- Current weather details -->
+    <section class="current-weather">
+        <h2 class="city-name">City Name <span class="date">Date</span> <img src="path-to-weather-icon.png" alt="Weather Icon"></h2>
+        <ul>
+            <li>Temp: <span class="temperature"></span></li>
+            <li>Wind: <span class="wind-speed"></span></li>
+            <li>Humidity: <span class="humidity"></span></li>
+        </ul>
+    </section>
+    
+    <!-- 5-day forecast -->
+    <section class="forecast">
+        <h2>5-Day Forecast</h2>
+        <div class="day">
+            <h3 class="date">Date</h3>
+            <img src="path-to-weather-icon.png" alt="Weather Icon">
+            <ul>
+                <li>Temp: <span class="temperature"></span></li>
+                <li>Wind: <span class="wind-speed"></span></li>
+                <li>Humidity: <span class="humidity"></span></li>
+            </ul>
+        </div>
+        <div class="day">
+            <h3 class="date">Date</h3>
+            <img src="path-to-weather-icon.png" alt="Weather Icon">
+            <ul>
+                <li>Temp: <span class="temperature"></span></li>
+                <li>Wind: <span class="wind-speed"></span></li>
+                <li>Humidity: <span class="humidity"></span></li>
+            </ul>
+        </div>
+        <div class="day">
+            <h3 class="date">Date</h3>
+            <img src="path-to-weather-icon.png" alt="Weather Icon">
+            <ul>
+                <li>Temp: <span class="temperature"></span></li>
+                <li>Wind: <span class="wind-speed"></span></li>
+                <li>Humidity: <span class="humidity"></span></li>
+            </ul>
+        </div>
+        <div class="day">
+            <h3 class="date">Date</h3>
+            <img src="path-to-weather-icon.png" alt="Weather Icon">
+            <ul>
+                <li>Temp: <span class="temperature"></span></li>
+                <li>Wind: <span class="wind-speed"></span></li>
+                <li>Humidity: <span class="humidity"></span></li>
+            </ul>
+        </div>
+        <div class="day">
+            <h3 class="date">Date</h3>
+            <img src="path-to-weather-icon.png" alt="Weather Icon">
+            <ul>
+                <li>Temp: <span class="temperature"></span></li>
+                <li>Wind: <span class="wind-speed"></span></li>
+                <li>Humidity: <span class="humidity"></span></li>
+            </ul>
+        </div>
+    </section>
+    
+    <script src="./assets/JS/script.js"></script>
 </body>
 </html>
